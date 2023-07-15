@@ -1,0 +1,16 @@
+{%extends 'candidate-base.html'%}
+{%block body%}
+<div class="container">
+  <div class="row mt-5 mb-5 ">
+    <div class="col-3"></div>
+    <div class="col-6 p-5 shadow rounded-5">
+      <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-info form-control">update</button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+{%endblock%}

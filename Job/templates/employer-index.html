@@ -1,0 +1,172 @@
+{%extends 'employer-base.html'%}
+{%block body%}
+
+<style>
+  .t{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+</style>
+
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://www.svapinfotech.com/data/media/orginal/job-portal-development-2268.png" class="d-block " width="100%" height="600px" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-10 col-lg-8">
+                    <h1 class="t display-3 text-white animated slideInDown mb-4">Find A Talent Best Suited For Your Job</h1>
+                    <a href="{%url 'job-add'%}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Add A Job</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://www.hermos.com/wp-content/uploads/2022/08/hermos-karriere-titelbild.jpg" class="d-block w-100" width="100%" height="600px" alt="...">
+      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(43, 57, 64, .5);">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-10 col-lg-8">
+                    <h1 class="t display-3 text-white animated slideInDown mb-4">You May Have New Applications For Your Job</h1>
+                    <a href="{%url 'myjob-list'%}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">My Jobs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  {%if messages%}
+      {%for m in messages%}
+      <div class="alert alert-info"> {{m}}</div>
+
+      {%endfor%}
+      {%endif%}
+</div>
+
+<div class="container-xxl py-5">
+  <div class="container">
+      <div class="row g-5 align-items-center">
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+              <div class="row g-0 about-bg rounded overflow-hidden">
+                  <div class="col-6 text-start">
+                      <img class="img-fluid w-100" src="https://www.eichnercrouser.com/wp-content/uploads/2017/01/ec-team-placeholder-300x252.jpg">
+                  </div>
+                  <div class="col-6 text-start">
+                      <img class="img-fluid" src="https://www.tlnt.com/wp-content/uploads/sites/4/2019/01/onboarding-welcome-new-700x467.jpg" style="width: 85%; margin-top: 15%;">
+                  </div>
+                  <div class="col-6 text-end">
+                      <img class="img-fluid" src="https://xpertcleanup.com/wp-content/uploads/2020/02/window-banner-05.jpg" style="width: 85%;">
+                  </div>
+                  <div class="col-6 text-end">
+                      <img class="img-fluid w-100" src="https://www.betterteam.com/images/Teacher-Trainer-Job-Description.jpeg?crop=21:16,smart&width=420&dpr=2">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+              <h1 class="mb-4">We Help To Get The Best Job And Find A Talent</h1>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-white" style="background-color: #3f51b5">
+  <!-- Grid container -->
+  <div class="container">
+    <!-- Section: Links -->
+    <section class="mt-5">
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5">
+        <!-- Grid column -->
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!" class="text-white">About us</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!" class="text-white">Help</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!" class="text-white">Contact</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+    <hr class="my-5" />
+
+    <!-- Section: Text -->
+    <section class="mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <p>
+            This is a dummy webapp for finding job and finding employees
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Social -->
+    <section class="text-center mb-5">
+      <a href="" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="text-white me-4">
+        <i class="fab fa-github"></i>
+      </a>
+    </section>
+    <!-- Section: Social -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div
+       class="text-center p-3"
+       style="background-color: rgba(0, 0, 0, 0.2)"
+       >
+    © 2020 Copyright:
+    <a class="text-white" href=""
+       ></a
+      >
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+
+
+{%endblock%}

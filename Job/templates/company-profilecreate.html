@@ -1,0 +1,65 @@
+{%extends 'employer-base.html'%}
+{%block body%}
+<style>
+  @media (min-width: 1025px) {
+    .h-custom {
+      height: 100vh !important;
+    }
+  }
+</style>
+{%if form.errors%}
+
+{{form.errors}}
+
+{%endif%}
+
+<div class="row d-flex justify-content-center align-items-center h-100 mb-5 ">
+  <div class="col-lg-8 col-xl-6">
+    <div class="card-body p-4 p-md-5 border mt-5 rounded-2 shadow">
+
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2"> create companyprofile</h3>
+      
+
+      <form class="px-md-2" method="post" enctype="multipart/form-data" action="{%url 'companyprofile-create'%}">
+
+        {%csrf_token%}
+        
+      
+
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="cname">Company Name</label>
+          <input type="text" id="cname" class="form-control" name="company_name">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="adrs">Adress</label>
+          <input type="text" id="adrs" class="form-control" name="adress">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="place">Location</label>
+          <input type="text" id="place" class="form-control" name="location">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="ph">Phone</label>
+          <input type="text" id="ph" class="form-control" name="phone">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="des">Description</label>
+          <input type="text" id="des" class="form-control" name="description">
+        </div>
+
+        <div class="form-outline mb-4">
+          <input type="file" id="form3Example1q" class="form-control" name="logo">
+        </div>
+
+        <button type="submit" class="btn btn-info mb-1 form-control">save</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+{%endblock%}

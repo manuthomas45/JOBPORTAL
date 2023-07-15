@@ -1,0 +1,16 @@
+{%extends 'employer-base.html'%}
+{%block body%}
+<div class="container">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 shadow p-5 mt-5 mb-5 rounded-5">
+      <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="form-control">update</button>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+{%endblock%}

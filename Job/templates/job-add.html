@@ -1,0 +1,63 @@
+{%extends 'employer-base.html'%}
+{%block body%}
+
+{%if form.errors%}
+{{form.errors}}
+{%endif%}
+<div class="container">
+  <div class="row mb-5 mt-5">
+    <div class="col-3"></div>
+    <div class="col-6 shadow ">
+      <form action="" method="post" class="p-5 bord border-1">
+        {%csrf_token%}
+        <div class="mb-3">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="description">Description</label>
+          <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="qualification">Qualification</label>
+          <input type="text" name="qualification" id="qualification" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="experience">Experience</label>
+          <input type="text" name="experience" id="experience" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="location">Location</label>
+          <input type="text" name="location" id="location" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="skills">Skills</label>
+          <input type="text" name="skills" id="skills" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="job_type">Job type</label>
+          <input type="text" name="job_type" id="job_type" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="vacancies">Vacancies</label>
+          <input type="text" name="vacancies" id="vacancies" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="salary">Salary</label>
+          <input type="text" name="salary" id="salary" class="form-control"> 
+        </div>
+        <div class="mb-3">
+          <label for="end_date">End Date</label>
+          <input type="text" name="end_date" id="end_date" class="form-control">
+        </div>
+      <div class="mt-5">
+        <button type="submit" class="btn btn-primary form-control">Add</button>
+      </div>
+      </form>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+
+{%endblock%}

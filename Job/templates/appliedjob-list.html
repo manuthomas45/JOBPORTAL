@@ -1,0 +1,48 @@
+{%extends 'candidate-base.html'%}
+{%block body%}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">  
+
+    
+<body>
+    <div class="container-xxl py-5 " >
+        <div class="container ">
+            <div class="tab-class text-center wow fadeInUp" >
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show active ">
+                        {%for a in apps%}
+                        <div class="job-item-1 job-item p-4 mb-4  p-3 shadow-lg rounded">
+                            <div class="row g-4">
+                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid border rounded" src="{{a.job.company.logo.url}}" alt="" style="width: 80px; height: 80px;">
+                                    <div class="text-start ps-4">
+                                        <h4 class="mb-3">{{a.job.title}}</h4>
+                                        <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{a.job.location}}</span>
+                                        <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>{{a.job.job_type}}</span>
+                                        <span class="text-truncate me-3"><i class="far fa-money-bill-alt text-primary me-2"></i>{{a.job.salary}}</span>
+                                        {%if a.status == 'pending'%}
+                                    <span class="text-truncate me-0">status : <span class="text-warning">Pending</span></span>
+                                    {%elif a.status == 'accept'%}
+                                    <span class="text-truncate me-0">status : <span class="text-success" >Accepted</span></span>
+                                    {%elif a.status == 'cancelled'%}
+                                    <span class="text-truncate me-0">status : <span class="text-secondary">Cancelled</span></span>
+                                    {%else%}
+                                    <span class="text-truncate me-0">status : <span class="text-danger">Rejected</span></span>
+                                    {%endif%}
+                                    </div>
+                                </div>
+                                {%if a.status == 'pending'%}
+                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center mt-5">
+                                    <a href="{%url 'application-cancel' a.id%}" class="btn btn-danger">cancel</a>
+                                </div>
+                                {%endif%}
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{%endblock%}

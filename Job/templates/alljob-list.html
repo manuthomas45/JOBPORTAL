@@ -1,0 +1,45 @@
+{%extends 'candidate-base.html'%}
+{%block body%}
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">  
+
+    <style>
+        .job-item-1:hover{
+            box-shadow: none;
+        }
+    </style>
+<body>
+    <div class="container-xxl py-5 " >
+        <div class="container ">
+            <div class="tab-class text-center wow fadeInUp" >
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show active ">
+                        {%for j in jobs%}
+                        {{request.user.employeeprofile.applied_job}}
+                        <div class="job-item-1 job-item p-4 mb-4  p-3 shadow-lg rounded">
+                            <div class="row g-4">
+                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid border rounded" src="{{j.company.logo.url}}" alt="" style="width: 80px; height: 80px;">
+                                    <div class="text-start ps-4">
+                                        <h5 class="mb-3">{{j.title}}</h5>
+                                        <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>{{j.location}}</span>
+                                        <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>{{j.job_type}}</span>
+                                        <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i>{{j.salary}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                    <div class="d-flex mb-3">
+                                        <a class="btn btn-primary" href="{%url 'job-details' j.id%}">View Details</a>
+                                    </div>
+                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>date line:{{j.end_date}}</small>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{%endblock%}

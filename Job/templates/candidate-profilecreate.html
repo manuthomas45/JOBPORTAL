@@ -1,0 +1,106 @@
+{%extends 'candidate-base.html'%}
+{%block body%}
+<style>
+  @media (min-width: 1025px) {
+    .h-custom {
+      height: 100vh !important;
+    }
+  }
+</style>
+{%if form.errors%}
+
+{{form.errors}}
+
+{%endif%}
+
+<div class="row d-flex justify-content-center align-items-center h-100 mb-5 ">
+  <div class="col-lg-8 col-xl-6">
+    <div class="card-body p-4 p-md-5 border mt-5 rounded-2 shadow">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create your Profile</h3>
+
+      <form class="px-md-2" method="post" enctype="multipart/form-data" action="{%url 'candidateprofile-create'%}">
+        
+      
+
+        {%csrf_token%}
+
+
+
+
+
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="phone">phone</label>
+          <input type="text" id="phone" class="form-control" name="phone">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="place">Location</label>
+          <input type="text" id="place" class="form-control" name="location">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="r2rl">Ready To Relocate</label>
+          <input type="checkbox" id="r2rl" name="ready_to_relocate">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="qualification">Qualification</label>
+          <input type="text" id="qualification" class="form-control" name="qualification">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="skills">Skills</label>
+          <input type="text" id="skills" class="form-control" name="skills">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="experience">Experience</label>
+          <input type="text" id="experience" class="form-control" name="experience">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="desc">Description</label>
+          <input type="text" id="desc" class="form-control" name="description">
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+
+          <h6 class="mb-0 me-4 ms-3 ">Gender: </h6>
+
+          <div class="form-check form-check-inline mb-0 me-4">
+            <label class="form-check-label" for="male">Male</label>
+            <input class="form-check-input" type="radio" name="gender" value="Male" id="male">
+          </div>
+
+          <div class="form-check form-check-inline mb-0 me-4">
+            <label class="form-check-label" for="female">Female</label>
+            <input class="form-check-input" type="radio" name="gender" value="Female" id="female">
+          </div>
+
+          <div class="form-check form-check-inline mb-0 me-4">
+            <label class="form-check-label" for="Other">Other</label>
+            <input class="form-check-input" type="radio" name="gender" value="Other" id="Other">
+          </div>
+
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="propic">Profile Pic</label>
+          <input type="file" id="propic" class="form-control" name="image">
+        </div>
+
+        <div class="form-outline mb-4">
+          <label class="resume" for="resume">Resume</label>
+          <input type="file" id="resume" class="form-control" name="resume">
+        </div>
+
+        <button type="submit" class="btn btn-info mb-1">Add</button>
+      
+      </form>
+    </div>
+
+  </div>
+</div>
+
+{%endblock%}

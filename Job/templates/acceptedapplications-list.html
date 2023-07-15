@@ -1,0 +1,39 @@
+{%extends 'employer-base.html'%}
+{%block body%}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">  
+
+    
+<body>
+    <div class="container-xxl py-5 " >
+        <div class="container ">
+            <div class="tab-class text-center wow fadeInUp" >
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show active ">
+                        {%for a in apps%}
+                        <div class="job-item-1 job-item p-4 mb-4  p-3 shadow-lg rounded">
+                            <div class="row g-4">
+                                <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                    <img class="flex-shrink-0 img-fluid border rounded" src="{{a.candidate.image.url}}" alt="" style="width: 80px; height: 80px;">
+                                    <div class="text-start ps-4">
+                                        <h4 class="mb-3">{{a.candidate}}</h4>
+                                        
+                                        <span class="text-truncate me-5"><strong>applied on :</strong> {{a.apply_date}}</span>
+                                        <span class="text-truncate me-0"><strong>status :</strong> {{a.status}} </span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                    <div class="d-flex mb-3">
+                                        <a class="btn btn-primary" href="{%url 'candidate-details' a.id %}">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{%endblock%}
